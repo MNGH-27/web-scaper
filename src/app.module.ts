@@ -1,10 +1,11 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { MrBilitController } from './mr-bilit/mr-bilit.controller';
+import { MrBilitService } from './mr-bilit/mr-bilit.service';
+import { MrBilitModule } from './mr-bilit/mr-bilit.module';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [MrBilitModule],
+  controllers: [MrBilitController],
+  providers: [MrBilitService],
 })
 export class AppModule {}
