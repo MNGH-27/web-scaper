@@ -1,11 +1,16 @@
 import { Module } from '@nestjs/common';
-import { MrBilitController } from './mr-bilit/mr-bilit.controller';
-import { MrBilitService } from './mr-bilit/mr-bilit.service';
-import { MrBilitModule } from './mr-bilit/mr-bilit.module';
+import { HttpModule } from '@nestjs/axios';
+
+//* MODULES
+import { ScraperModule } from './scraper/scraper.module';
+import { DataServiceModule } from './data-service/data-service.module';
+import { TelegramModule } from './telegram/telegram.module';
+import { DatabaseModule } from './database/database.module';
+import { SharedModule } from './shared/shared.module';
 
 @Module({
-  imports: [MrBilitModule],
-  controllers: [MrBilitController],
-  providers: [MrBilitService],
+  imports: [HttpModule, ScraperModule, DataServiceModule, TelegramModule, DatabaseModule, SharedModule],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
